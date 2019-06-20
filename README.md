@@ -1,2 +1,2 @@
-# involved-studio-website-v1
+# involved-studio-website
 Website for Involved Studio
