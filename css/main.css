@@ -2001,7 +2001,7 @@ html.no-csstransitions .home-scroll {
  }
 
 .s-services .row {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0 ,0.69);
   padding: 6rem;
 }
 
@@ -2283,7 +2283,7 @@ html.no-csstransitions .home-scroll {
 
 .video-text {
   display: block;
-  font-family: "metropolis-bold", sans-serif;
+  font-family: "metropolis-regular", sans-serif;
   font-size: 1.4rem;
   line-height: 2;
   color: rgba(255, 255, 255, 0.5);
@@ -2450,8 +2450,8 @@ html.no-csstransitions .home-scroll {
 }
 
 .crew__avatar {
-  width: 18rem;
-  height: 18rem;
+  width: 16rem;
+  height: 16rem;
   border-radius: 100%;
   margin: 0 auto;
   margin-bottom: 3rem;
@@ -2462,7 +2462,7 @@ html.no-csstransitions .home-scroll {
   font-size: 1.6rem;
   line-height: 1.5;
   text-align: center;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 1.4px;
 }
 .crew__author span {
@@ -2601,7 +2601,7 @@ html.no-csstransitions .home-scroll {
   color: rgba(255, 255, 255, 0.4);
   padding-top: 6rem;
   padding-bottom: 6rem;
-  font-family: "montserrat-light", sans-serif;
+  font-family: "metropolis-regular", sans-serif;
   font-size: 1.5rem;
   line-height: 2;
   position: relative;
