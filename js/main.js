@@ -1,12 +1,12 @@
 /* ===================================================================
- * Transcend - Main JS
+ * Main JS
  *
  * ------------------------------------------------------------------- */
 
 (function($) {
 
     "use strict";
-    
+
     var cfg = {
         scrollDuration : 800, // smoothscroll duration
         mailChimpURL   : 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc'   // mailchimp url
@@ -23,20 +23,20 @@
    /* Preloader
     * -------------------------------------------------- */
     var clPreloader = function() {
-        
+
         $("html").addClass('cl-preload');
 
         $WIN.on('load', function() {
 
             //force page scroll position to top at page refresh
-            // $('html, body').animate({ scrollTop: 0 }, 'normal');
+            $('html, body').animate({ scrollTop: 0 }, 'normal');
 
             // will first fade out the loading animation 
             $("#loader").fadeOut("slow", function() {
                 // will fade out the whole DIV that covers the website.
                 $("#preloader").delay(300).fadeOut("slow");
-            }); 
-            
+            });
+
             // for hero content animations 
             $("html").removeClass('cl-preload');
             $("html").addClass('cl-loaded');
@@ -50,7 +50,7 @@
    /* Menu on Scrolldown
     * ------------------------------------------------------ */
     var clMenuOnScrolldown = function() {
-        
+
         var menuTrigger = $('.header-menu-toggle');
 
         $WIN.on('scroll', function() {
@@ -118,7 +118,7 @@
                 $size = $thumbLink.data('size').split('x'),
                 $width  = $size[0],
                 $height = $size[1];
-        
+
             var item = {
                 src  : $href,
                 w    : $width,
@@ -166,7 +166,6 @@
   		    prevArrow: '<span class="prevArrow"><i class="fas fa-angle-left"></i></span>',
             slidesToShow: 3,
             slidesToScroll: 1,
-            // autoplay: true,
             pauseOnFocus: false,
             autoplaySpeed: 5000,
             responsive: [
@@ -193,56 +192,15 @@
         });
     };
 
-    // var clCrewSlickSlider = function() {
-
-    //     $('.crew__slider').slick({
-    //         arrows: true,
-    //         dots: false,
-    //         centerMode: true,
-    //         centerPadding: '0px',
-    //         adaptiveHeight: true,
-    //         infinite: true,
-    //         speed: 1000,
-	// 		nextArrow: '<span class="nextArrow"><i class="fas fa-angle-right"></i></span>',
-  	// 	    prevArrow: '<span class="prevArrow"><i class="fas fa-angle-left"></i></span>',
-    //         slidesToShow: 3,
-    //         slidesToScroll: 1,
-    //         // autoplay: true,
-    //         pauseOnFocus: false,
-    //         autoplaySpeed: 5000,
-    //         responsive: [
-    //             {
-    //                 breakpoint: 1200,
-    //                 settings: {
-    //                     slidesToShow: 2,
-    //                     slidesToScroll: 1
-    //                 }
-    //             }, {
-    //                 breakpoint: 900,
-    //                 settings: {
-    //                     slidesToShow: 1,
-    //                     slidesToScroll: 1
-    //                 }
-    //             }, {
-    //                 breakpoint: 480,
-    //                 settings: {
-    //                     slidesToShow: 1,
-    //                     slidesToScroll: 1
-    //                 }
-    //             }
-    //         ]
-    //     });
-    // };
-
 
    /* Smooth Scrolling
     * ------------------------------------------------------ */
     var clSmoothScroll = function() {
-        
+
         $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
             $target    = $(target);
-            
+
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -265,7 +223,7 @@
    /* Placeholder Plugin Settings
     * ------------------------------------------------------ */
     var clPlaceholder = function() {
-        $('input, textarea, select').placeholder();  
+        $('input, textarea, select').placeholder();
     };
 
 
@@ -275,7 +233,7 @@
 
         $('.alert-box').on('click', '.alert-box__close', function() {
             $(this).parent().fadeOut(500);
-        }); 
+        });
 
     };
 
@@ -283,7 +241,7 @@
    /* Animate On Scroll
     * ------------------------------------------------------ */
     var clAOS = function() {
-        
+
         AOS.init( {
             offset: 200,
             duration: 600,
@@ -296,49 +254,16 @@
     };
 
 
-   /* AjaxChimp
-    * ------------------------------------------------------ */
-    var clAjaxChimp = function() {
-        
-        $('#mc-form').ajaxChimp({
-            language: 'es',
-            url: cfg.mailChimpURL
-        });
-
-        // Mailchimp translation
-        //
-        //  Defaults:
-        //	 'submit': 'Submitting...',
-        //  0: 'We have sent you a confirmation email',
-        //  1: 'Please enter a value',
-        //  2: 'An email address must contain a single @',
-        //  3: 'The domain portion of the email address is invalid (the portion after the @: )',
-        //  4: 'The username portion of the email address is invalid (the portion before the @: )',
-        //  5: 'This email address looks fake or invalid. Please enter a real email address'
-
-        $.ajaxChimp.translations.es = {
-            'submit': 'Submitting...',
-            0: '<i class="fas fa-check"></i> We have sent you a confirmation email',
-            1: '<i class="fas fa-exclamation-circle"></i> You must enter a valid e-mail address.',
-            2: '<i class="fas fa-exclamation-circle"></i> E-mail address is not valid.',
-            3: '<i class="fas fa-exclamation-circle"></i> E-mail address is not valid.',
-            4: '<i class="fas fa-exclamation-circle"></i> E-mail address is not valid.',
-            5: '<i class="fas fa-exclamation-circle"></i> E-mail address is not valid.'
-        } 
-
-    };
-
-
    /* Back to Top
     * ------------------------------------------------------ */
     var clBackToTop = function() {
-        
+
         var pxShow  = 500,         // height on which the button will show
         fadeInTime  = 400,         // how slow/fast you want the button to show
         fadeOutTime = 400,         // how slow/fast you want the button to hide
         scrollSpeed = 300,         // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
         goTopButton = $(".cl-go-top")
-        
+
         // Show or hide the sticky footer button
         $(window).on('scroll', function() {
             if ($(window).scrollTop() >= pxShow) {
@@ -425,6 +350,35 @@
     });
 
 
+    /* Contact form
+    * ------------------------------------------------------ */
+
+    var sendEmail = function() {
+        $("#contact-form").on("submit", function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+            formData.append('service_id', 'gmail');
+            formData.append('template_id', 'template_EIxy7YQS');
+            formData.append('user_id', 'user_Lt4mdKpoobIxgiHp7l9gB');
+
+            $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false
+            }).done(function() {
+                console.log('Your mail is sent.');
+                $('.message-success').show();
+            }).fail(function(error) {
+                $('.message-warning').show();
+            });
+
+            $("#contact-form")[0].reset()
+        });
+    };
+
+
    /* Initialize
     * ------------------------------------------------------ */
     (function clInit() {
@@ -434,13 +388,12 @@
         clOffCanvas();
         clPhotoswipe();
         clShowcaseSlickSlider();
-        // clCrewSlickSlider();
         clSmoothScroll();
         clPlaceholder();
         clAlertBoxes();
         clAOS();
-        clAjaxChimp();
         clBackToTop();
+        sendEmail();
 
     })();
 
