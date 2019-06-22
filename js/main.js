@@ -22,7 +22,7 @@
 
    /* Preloader
     * -------------------------------------------------- */
-    var clPreloader = function() {
+    var preloader = function() {
 
         $("html").addClass('cl-preload');
 
@@ -49,7 +49,7 @@
 
    /* Menu on Scrolldown
     * ------------------------------------------------------ */
-    var clMenuOnScrolldown = function() {
+    var menuOnScrolldown = function() {
 
         var menuTrigger = $('.header-menu-toggle');
 
@@ -68,7 +68,7 @@
 
    /* OffCanvas Menu
     * ------------------------------------------------------ */
-    var clOffCanvas = function() {
+    var offCanvas = function() {
 
         var menuTrigger     = $('.header-menu-toggle'),
             nav             = $('.header-nav'),
@@ -100,7 +100,7 @@
 
    /* photoswipe
     * ----------------------------------------------------- */
-    var clPhotoswipe = function() {
+    var photoswipe = function() {
         var items = [],
             $pswp = $('.pswp')[0],
             $folioItems = $('.item-folio');
@@ -153,7 +153,7 @@
 
     /* slick slider
      * ------------------------------------------------------ */
-    var clShowcaseSlickSlider = function() {
+    var showcaseSlickSlider = function() {
 
         $('.slider').slick({
             dots: false,
@@ -195,7 +195,7 @@
 
    /* Smooth Scrolling
     * ------------------------------------------------------ */
-    var clSmoothScroll = function() {
+    var smoothScroll = function() {
 
         $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
@@ -220,27 +220,9 @@
     };
 
 
-   /* Placeholder Plugin Settings
-    * ------------------------------------------------------ */
-    var clPlaceholder = function() {
-        $('input, textarea, select').placeholder();
-    };
-
-
-   /* Alert Boxes
-    * ------------------------------------------------------ */
-    var clAlertBoxes = function() {
-
-        $('.alert-box').on('click', '.alert-box__close', function() {
-            $(this).parent().fadeOut(500);
-        });
-
-    };
-
-
    /* Animate On Scroll
     * ------------------------------------------------------ */
-    var clAOS = function() {
+    var aos = function() {
 
         AOS.init( {
             offset: 200,
@@ -256,7 +238,7 @@
 
    /* Back to Top
     * ------------------------------------------------------ */
-    var clBackToTop = function() {
+    var backToTop = function() {
 
         var pxShow  = 500,         // height on which the button will show
         fadeInTime  = 400,         // how slow/fast you want the button to show
@@ -277,7 +259,7 @@
 
     /* Embedded video
     * ------------------------------------------------------ */
-    var clVideoOptimizer = function() {
+    var videoOptimizer = function() {
         var youtube = document.querySelectorAll( ".youtube" );
 
         for (var i = 0; i < youtube.length; i++) {
@@ -292,6 +274,7 @@
 
             youtube[i].addEventListener( "click", function() {
                 var iframe = document.createElement( "iframe" );
+
                 iframe.setAttribute( "frameborder", "0" );
                 iframe.setAttribute( "allowfullscreen", "" );
                 iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
@@ -300,7 +283,7 @@
                 this.appendChild( iframe );
             } );
         };
-    }();
+    };
 
    /* Scroll icon
     * ------------------------------------------------------ */
@@ -353,7 +336,7 @@
     /* Contact form
     * ------------------------------------------------------ */
 
-    var sendEmail = function() {
+    var emailjs = function() {
         $("#contact-form").on("submit", function(event) {
             event.preventDefault();
 
@@ -383,17 +366,16 @@
     * ------------------------------------------------------ */
     (function clInit() {
 
-        clPreloader();
-        clMenuOnScrolldown();
-        clOffCanvas();
-        clPhotoswipe();
-        clShowcaseSlickSlider();
-        clSmoothScroll();
-        clPlaceholder();
-        clAlertBoxes();
-        clAOS();
-        clBackToTop();
-        sendEmail();
+        preloader();
+        menuOnScrolldown();
+        offCanvas();
+        photoswipe();
+        showcaseSlickSlider();
+        smoothScroll();
+        videoOptimizer();
+        aos();
+        backToTop();
+        emailjs();
 
     })();
 
