@@ -1517,9 +1517,6 @@ input::-moz-focus-inner {
     right: 20px;
   }
 
-  .header-nav__list li:nth-child(3) {
-    display: none;;
-  }
 }
 
 
@@ -2696,7 +2693,7 @@ html.no-csstransitions .home-scroll {
   margin: 0;
 }
 
-.contact-subscribe .fa-instagram {
+.fa-instagram {
   font-weight: 600;
 }
 
@@ -2929,6 +2926,16 @@ html.no-csstransitions .home-scroll {
   }
 }
 @media only screen and (max-width: 1200px) {
+  .s-contact {
+    justify-content: flex-end;
+    height: auto;
+    padding: 42px 0;
+  }
+
+  .s-contact .row {
+    padding: 0 130px;
+  }
+
   .contact-main {
     margin-top: 13.2rem;
   }
@@ -2939,10 +2946,31 @@ html.no-csstransitions .home-scroll {
 
   .contact-primary {
     width: 100%;
+    padding: 0;
+  }
+  .contact-primary h3 {
+    text-align: center;
   }
 
   .contact-secondary {
     width: 100%;
+    padding: 3rem;
+  }
+  .contact-secondary .contact-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-secondary .contact-info .cinfo {
+    margin-bottom: 1rem;
+  }
+  .contact-secondary .contact-info p {
+    margin-bottom: 1rem;
+  }
+  .contact-secondary .left {
+    width: 42%;
+  }
+  .contact-secondary .right {
+    width: 50%;
   }
 
   .contact-email {
@@ -2958,7 +2986,7 @@ html.no-csstransitions .home-scroll {
   }
 
   .contact-social {
-    font-size: 2.8rem;
+    font-size: 1.8rem;
   }
 
   .cl-copyright {
@@ -2977,19 +3005,21 @@ html.no-csstransitions .home-scroll {
   .contact-address {
     font-size: 2.1rem;
   }
-
-  .contact-social {
-    font-size: 2.4rem;
-  }
 }
 @media only screen and (max-width: 800px) {
-  .contact-secondary,
   .cl-copyright {
     padding-right: 7.8rem;
   }
 
-  .contact-secondary {
-    margin-bottom: 1.5rem;
+  .contact-info {
+    flex-wrap: wrap;
+  }
+
+  .contact-secondary .left {
+    width: 100%;
+  }
+  .contact-secondary .right {
+    width: 100%;
   }
 
   .contact-email {
@@ -3022,6 +3052,15 @@ html.no-csstransitions .home-scroll {
   }
 }
 @media only screen and (max-width: 600px) {
+  .s-contact {
+    padding: 42px;
+    height: auto;
+  }
+
+  .s-contact .row {
+    padding: 0;
+  }
+
   .contact-main {
     margin-top: 12rem;
   }
@@ -3043,8 +3082,11 @@ html.no-csstransitions .home-scroll {
   }
 
   .cl-go-top {
-    right: 25px;
-    bottom: 7.2rem;
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -3074,10 +3116,6 @@ html.no-csstransitions .home-scroll {
     margin-top: 9.6rem;
   }
 
-  .contact-secondary {
-    padding: 0;
-  }
-
   .contact-email {
     font-size: 2.4rem;
   }
@@ -3099,11 +3137,6 @@ html.no-csstransitions .home-scroll {
     display: none;
   }
 
-  .cl-go-top {
-    bottom: 12rem;
-    right: 50%;
-    margin-right: -24px;
-  }
   .cl-go-top::before,
   .cl-go-top::after {
     display: none;
