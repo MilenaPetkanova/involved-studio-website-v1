@@ -2031,6 +2031,7 @@ html.no-csstransitions .home-scroll {
 .s-services .row {
   background-color: rgba(0, 0, 0, 0.80);
   padding: 6rem;
+  width: 90%;
 }
 
 .s-services .col-full {
