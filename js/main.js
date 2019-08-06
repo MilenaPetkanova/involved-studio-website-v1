@@ -51,7 +51,7 @@
     * ------------------------------------------------------ */
     var menuOnScrolldown = function() {
 
-        var menuTrigger = $('.header-menu-toggle');
+        var menuTrigger = $('.mobile .header-menu-toggle');
 
         $WIN.on('scroll', function() {
 
@@ -196,9 +196,9 @@
                 'scrollTop': $target.offset().top
             }, cfg.scrollDuration, 'swing').promise().done(function () {
 
-                // check if menu is open
+                // check if menu is open on mobile
                 if ($('body').hasClass('menu-is-open')) {
-                    $('.header-menu-toggle').trigger('click');
+                    $('.mobile .header-menu-toggle').trigger('click');
                 }
 
                 window.location.hash = target;
@@ -349,6 +349,18 @@
         });
     };
 
+    var switchHeaders = function() {
+        if ($(window).width() >= 514) {
+            $('.s-header').addClass('not-mobile');
+            $('.s-header').removeClass('mobile');
+            $("html").addClass('menu-is-open');
+        }
+        else {
+            $('.s-header').addClass('mobile');
+            $('.s-header').removeClass('not-mobile');
+        }
+    };
+
 
    /* Initialize
     * ------------------------------------------------------ */
@@ -364,7 +376,7 @@
         aos();
         backToTop();
         emailjs();
-
+        switchHeaders();
     })();
 
 })(jQuery);
