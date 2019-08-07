@@ -51,7 +51,7 @@
     * ------------------------------------------------------ */
     var menuOnScrolldown = function() {
 
-        var menuTrigger = $('.mobile .header-menu-toggle');
+        var menuTrigger = $('.hamburger-header .header-menu-toggle');
 
         $WIN.on('scroll', function() {
 
@@ -196,9 +196,9 @@
                 'scrollTop': $target.offset().top
             }, cfg.scrollDuration, 'swing').promise().done(function () {
 
-                // check if menu is open on mobile
+                // only on hamburger-header check if menu is open
                 if ($('body').hasClass('menu-is-open')) {
-                    $('.mobile .header-menu-toggle').trigger('click');
+                    $('.hamburger-header .header-menu-toggle').trigger('click');
                 }
 
                 window.location.hash = target;
@@ -350,14 +350,14 @@
     };
 
     var switchHeaders = function() {
-        if ($(window).width() >= 514) {
-            $('.s-header').addClass('not-mobile');
-            $('.s-header').removeClass('mobile');
+        if ($(window).width() >= 1000) {
+            $('.s-header').addClass('wide-header');
+            $('.s-header').removeClass('hamburger-header');
             $("html").addClass('menu-is-open');
         }
         else {
-            $('.s-header').addClass('mobile');
-            $('.s-header').removeClass('not-mobile');
+            $('.s-header').addClass('hamburger-header');
+            $('.s-header').removeClass('wide-header');
         }
     };
 
