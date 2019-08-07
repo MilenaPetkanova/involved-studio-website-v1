@@ -71,12 +71,12 @@ html, body {
 
 body {
   background: #000000;
-  font-family: "metropolis-semibold", sans-serif;
-  font-size: 1.7rem;
+  font-family: "metropolis-regular", sans-serif;
+  font-size: 14px;
   font-style: normal;
   font-weight: normal;
   line-height: 1.765;
-  color: #555555;
+  color: rgba(255, 255, 255, 0.69);
   margin: 0;
   padding: 0;
 }
@@ -94,31 +94,10 @@ section {
 
 section .row {
   max-width: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0 130px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-@media only screen and (max-width: 1600px) {
-  section .row {
-    padding: 0 80px;
-  }
-}
-@media only screen and (max-width: 1600px) {
-  section .row {
-    padding: 0 80px;
-  }
-}
-@media only screen and (max-width: 800px) {
-  section .row {
-    padding: 0 63px;
-  }
-}
-@media only screen and (max-width: 620px) {
-  section .row {
-    padding: 0 30px;
-  }
-}
 
 /* ------------------------------------------------------------------- 
  * ## links
@@ -1435,7 +1414,7 @@ input::-moz-focus-inner {
     width: 100%;
     height: auto;
     position: fixed;
-    padding: 3.6rem 1.2rem;
+    padding: 3.6rem 0;
  }
 
  .wide-header .header-nav a {
@@ -1487,10 +1466,6 @@ input::-moz-focus-inner {
  * responsive:
  * header
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1600px) {
-}
-@media only screen and (max-width: 800px) {
-}
 @media only screen and (max-width: 600px) {
   .s-header {
     height: 90px;
@@ -1531,8 +1506,8 @@ input::-moz-focus-inner {
   padding-top: 0;
 }
 .s-home .row {
-  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 63px;
 }
 .s-home::before {
   display: block;
@@ -1568,13 +1543,11 @@ input::-moz-focus-inner {
 }
 
 .home-content__main .logo {
-  background-image: url(../images/logo_new.svg);
-  background-position: center center;
-  background-repeat: no-repeat;
   opacity: 0.69;
-  height: 12rem;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
 }
-
 
 
 /* ------------------------------------------------------------------- 
@@ -1584,9 +1557,9 @@ input::-moz-focus-inner {
   display: none;
   height: 4.8rem;
   position: relative;
-  z-index: 999;
-  right: 110px;
-  bottom: 6.6rem;
+  z-index: 900;
+  right: 50%;
+  bottom: 24px;
 }
 
 
@@ -1736,111 +1709,15 @@ html.no-csstransitions .home-scroll {
  * responsive:
  * home
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1000px) {
   .home-content__main .logo {
-    height: 12rem;
-  }
-
-  .home-scroll {
-    right: 50%;
-    bottom: 24px;
-  }
-
-  .home-social {
-    left: 60px;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  section .s-home {
-    display: block;
-  }
-
-  .home-content__main {
-    max-width: 666px;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .home-content__main {
-    max-width: 666px;
-    padding-right: 0;
+  .home-content__main .logo {
+    width: 100%;
   }
-}
-@media only screen and (max-width: 800px) {
-  .home-content__main {
-    max-width: 580px;
-  }
-
-  .home-scroll__text {
-    display: none;
-  }
-
-  .home-social {
-    left: 40px;
-  }
-}
-@media only screen and (max-width: 700px) {
-  .home-content__main {
-    max-width: 480px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .home-content__main {
-    width: auto;
-    padding-left: 35px;
-    padding-right: 35px;
-  }
-
-  .home-social {
-    left: 30px;
-    bottom: 6rem;
-    bottom: 6rem;
-  }
-  .home-social i {
-    display: inline;
-  }
-  .home-social .home-social-text {
-    display: none;
-  }
-/* 
-  .home-scroll {
-    right: 30px;
-    bottom: 6rem;
-  } */
-  .home-scroll__icon {
-    height: 4.2rem;
-    width: 4.2rem;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .s-home {
-    min-height: 642px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .s-home {
-    min-height: 630px;
-  }
-
-  .home-content__main {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  .home-social {
-    font-size: 13px;
-    left: 25px;
-  }
-  .home-social .home-social-title {
-    padding-right: 0.6rem;
-  }
-  .home-social .home-social-title::after {
-    display: none;
-  }
-
-  /* .home-scroll {
-    right: 25px;
-  } */
 }
 
 
@@ -1918,13 +1795,15 @@ html.no-csstransitions .home-scroll {
 * # s-studio
 *
 * ------------------------------------------------------------------- */
-/* 
-.s-studio .row {
-  max-width: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0 130px;
-} */
+
+.s-studio .about-text {
+  position: absolute;
+  top: 100%;
+  padding-top: 30px;
+  text-align: justify;
+  background: #000000;
+  z-index: 999;
+}
 
 /* -------------------------------------------------------------------
  * ## slider
@@ -2065,6 +1944,14 @@ html.no-csstransitions .home-scroll {
  * responsive:
  * studio
  * ------------------------------------------------------------------- */
+  @media only screen and (max-width: 1000px) {
+    .s-studio .about-text {
+      display: flex;
+      position: relative;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
 
 
 /* ===================================================================
@@ -2080,19 +1967,17 @@ html.no-csstransitions .home-scroll {
  .showcase {
   display: flex;
   justify-content: center;
-  padding: 1.5rem 0;
 }
 
 .slick-current .video-text {
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 
 .video-text {
-  font-size: 16px;
   line-height: 1.5;
   text-align: center;
-  color: rgba(255, 255, 255, 0.69);
   letter-spacing: 1.4px;
+  font-family: "metropolis-semibold", sans-serifserif;
 }
 .video-text p {
   margin-bottom: 1rem;

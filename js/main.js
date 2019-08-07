@@ -151,9 +151,9 @@
     };
 
 
-    /* slick slider
+    /* slick sliders
      * ------------------------------------------------------ */
-    var showcaseSlickSlider = function() {
+    var slickSliders = function() {
 
         $('.slider').slick({
             dots: false,
@@ -178,6 +178,16 @@
                 }
             ]
         });
+
+        // style about-text according to s-studio slider middle slide width
+        var middleImageWidth = $('.s-studio .slick-center .thumb-link').width();
+        var aboutTextWidth = middleImageWidth - 20;
+        var aboutTextMarginLeft = middleImageWidth + 10;
+
+        if ($(window).width() > 1200) {
+            $('.about-text').css('width', aboutTextWidth + 'px');
+            $('.about-text').css('margin-left', aboutTextMarginLeft + 'px');
+        }
     };
 
 
@@ -273,7 +283,7 @@
         };
     };
 
-   /* Scroll icon
+   /* Scroll down icon
     * ------------------------------------------------------ */
 
     $.fn.isInViewport = function() {
@@ -349,6 +359,10 @@
         });
     };
 
+
+    /* Header wide or hamburger
+    * ------------------------------------------------------ */
+
     var switchHeaders = function() {
         if ($(window).width() >= 1000) {
             $('.s-header').addClass('wide-header');
@@ -370,7 +384,7 @@
         menuOnScrolldown();
         offCanvas();
         photoswipe();
-        showcaseSlickSlider();
+        slickSliders();
         smoothScroll();
         videoOptimizer();
         aos();
