@@ -376,7 +376,34 @@
     };
 
 
-   /* Initialize
+    /* Open and close services dropdowns
+    * ------------------------------------------------------ */
+
+    var openServicesDropdowns = function() {
+        $('.s-services .wrapper-left').on({
+            mouseenter: function() {
+                $('.s-services .wrapper-left .fas').hide();
+            },
+            mouseleave: function() {
+                $('.s-services .wrapper-left .fas').show();
+            },
+            click: function() {
+                $('.s-services .wrapper-left .fas').hide();
+            },
+        });
+
+        $('.s-services .wrapper-right').on({
+            mouseenter: function() {
+                $('.s-services .wrapper-right .fas').hide();
+            },
+            mouseleave: function() {
+                $('.s-services .wrapper-right .fas').show();
+            },
+        });
+    };
+
+
+    /* Initialize
     * ------------------------------------------------------ */
     (function clInit() {
 
@@ -391,6 +418,7 @@
         backToTop();
         emailjs();
         switchHeaders();
+        openServicesDropdowns();
     })();
 
 })(jQuery);
