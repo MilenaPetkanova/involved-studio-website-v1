@@ -51,11 +51,11 @@
                 </a>
 
                 <ul class="header-nav__list">
-                    <li><a class="smoothscroll"  href="#services">Services</a></li>
-                    <li><a class="smoothscroll"  href="#studio">Studio</a></li>
-                    <li><a class="smoothscroll"  href="#works">Showcase</a></li>
-                    <li><a class="smoothscroll"  href="#crew">Crew</a></li>
-                    <li><a class="smoothscroll"  href="#contact">Contact</a></li>
+                    <li><a class="services smoothscroll" href="#services">Services</a></li>
+                    <li><a class="studio smoothscroll" href="#studio">Studio</a></li>
+                    <li><a class="works smoothscroll" href="#works">Showcase</a></li>
+                    <li><a class="crew smoothscroll" href="#crew">Crew</a></li>
+                    <li><a class="contact smoothscroll" href="#contact">Contact</a></li>
                 </ul>
 
                 <ul class="header-nav__social">
@@ -414,91 +414,37 @@
 
         <div class="row contact-content" data-aos="fade-up">
 
-            <div class="contact-primary">
+            <form name="contactForm" class="contact-form" id="contact-form" method="post" action="" novalidate="novalidate">
+                <fieldset>
+                <input type="hidden" name="contact_number">
 
-                <h3 class="h6">Contact Us</h3>
-
-                <form name="contactForm" id="contact-form" method="post" action="" novalidate="novalidate">
-                    <fieldset>
-                    <input type="hidden" name="contact_number">
-
-                    <div class="form-field">
-                        <input name="user_name" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="user_email" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <textarea name="user_message" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <button class="full-width btn--primary">Submit</button>
-                    </div>
-
-                    </fieldset>
-                </form>
-
-                <!-- contact-warning -->
-                <div class="message-warning">
-                    Something went wrong. Please try again.
+                <div class="form-field">
+                    <input name="user_name" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                </div>
+                <div class="form-field">
+                    <input name="user_email" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                </div>
+                <div class="form-field">
+                    <textarea name="user_message" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                </div>
+                <div class="form-field">
+                    <button class="full-width btn--primary">Submit</button>
                 </div>
 
-                <!-- contact-success -->
-                <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div>
+                </fieldset>
+            </form>
 
-            </div> <!-- end contact-primary -->
+            <!-- contact-warning -->
+            <div class="message-warning">
+                Something went wrong. Please try again.
+            </div>
 
-            <div class="contact-secondary">
-                <div class="contact-info">
+            <!-- contact-success -->
+            <div class="message-success">
+                Your message was sent, thank you!<br>
+            </div>
 
-                    <div class="left">
-                        <div class="cinfo">
-                            <a class="site-logo" href="https://www.google.com/maps/place/Bulevard+%22Evlogi+i+Hristo+Georgiev%22+169,+1504+Sofia+Center,+Sofia/@42.6941534,23.3468552,17z/data=!4m5!3m4!1s0x40aa859cb2721999:0x73343e6475347965!8m2!3d42.6952889!4d23.3462416" target="_blank">
-                                <img src="images/map.jpg" alt="map-image">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="right">
-                        <div class="cinfo">
-                            <p>
-                                Evlogi and Hristo Georgievi Boulevard 169<br>
-                                Sofia, 1504
-                            </p>
-                        </div>
-
-                        <div class="cinfo">
-                            <p>
-                                +359 897 808 715
-                            </p>
-                            <p>
-                                contact@involved.studio
-                            </p>
-                        </div>
-
-                        <ul class="contact-social">
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCTZm_dywBt18YI_YLqWDRIQ" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/Involved-Studio-449224222500514/" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/involved_studio/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            </li>
-                        </ul> <!-- end contact-social -->
-                    </div>
-
-                </div> <!-- end contact-info -->
-            </div> <!-- end contact-secondary -->
-
-        </div>
-
-        <div class="cl-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
-        </div>
+        </div> <!-- end contact-content -->
 
     </section> <!-- end s-contact -->
 

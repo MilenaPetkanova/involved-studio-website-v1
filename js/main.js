@@ -19,8 +19,16 @@
     var doc = document.documentElement;
     doc.setAttribute('data-useragent', navigator.userAgent);
 
+    // Variables
+    var homeSection = $('#home').get(0);
+    var servicesSection = $('#services').get(0);
+    var studioSection = $('#studio').get(0);
+    var worksSection = $('#works').get(0);
+    var crewSection = $('#crew').get(0);
+    var contactSection = $('#contact').get(0);
 
-   /* Preloader
+
+    /* Preloader
     * -------------------------------------------------- */
     var preloader = function() {
 
@@ -43,8 +51,63 @@
 
             $('#scroll-down').css('display', 'block');
             $('#scroll-down').css('position', 'fixed');
+
+            if ($(contactSection).isInViewport()) {
+                $('#scroll-down').hide();
+            }
         });
     };
+
+
+    /* Scroll down icon
+    * ------------------------------------------------------ */
+
+    $.fn.isInViewport = function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+
+    $(window).on('resize scroll', function() {
+        if ($(homeSection).isInViewport()) {
+            $('#scroll-down').show();
+            $('#scroll-down').attr("href", '#services');
+            $('.header-nav a').removeClass('active');
+        }
+        if ($(studioSection).isInViewport()) {
+            $('#scroll-down').show();
+            $('#scroll-down').prop('href', '#works')
+            $('.header-nav a').removeClass('active');
+            $('.header-nav a.studio').addClass('active');
+        }
+        if ($(servicesSection).isInViewport()) {
+            $('#scroll-down').show();
+            $('#scroll-down').attr("href", '#studio');
+            $('.header-nav a').removeClass('active');
+            $('.header-nav a.services').addClass('active');
+        }
+        if ($(worksSection).isInViewport()) {
+            $('#scroll-down').show();
+            $('#scroll-down').prop('href', '#crew')
+            $('.header-nav a').removeClass('active');
+            $('.header-nav a.works').addClass('active');
+        }
+        if ($(crewSection).isInViewport()) {
+            $('#scroll-down').show();
+            $('#scroll-down').prop('href', '#contact');
+            $('.header-nav a').removeClass('active');
+            $('.header-nav a.crew').addClass('active');
+        }
+        if ($(contactSection).isInViewport()) {
+            $('#scroll-down').hide();
+            $('.header-nav a').removeClass('active');
+            $('.header-nav a.contact').addClass('active');
+        }
+    });
 
 
    /* Menu on Scrolldown
@@ -234,27 +297,6 @@
     };
 
 
-   /* Back to Top
-    * ------------------------------------------------------ */
-    var backToTop = function() {
-
-        var pxShow  = 500,         // height on which the button will show
-        fadeInTime  = 400,         // how slow/fast you want the button to show
-        fadeOutTime = 400,         // how slow/fast you want the button to hide
-        scrollSpeed = 300,         // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-        goTopButton = $(".cl-go-top")
-
-        // Show or hide the sticky footer button
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() >= pxShow) {
-                goTopButton.fadeIn(fadeInTime);
-            } else {
-                goTopButton.fadeOut(fadeOutTime);
-            }
-        });
-    };
-
-
     /* Embedded video
     * ------------------------------------------------------ */
     var videoOptimizer = function() {
@@ -282,53 +324,6 @@
             } );
         };
     };
-
-   /* Scroll down icon
-    * ------------------------------------------------------ */
-
-    $.fn.isInViewport = function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
-
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
-
-    var homeSection = $('#home').get(0);
-    var servicesSection = $('#services').get(0);
-    var studioSection = $('#studio').get(0);
-    var worksSection = $('#works').get(0);
-    var crewSection = $('#crew').get(0);
-    var contactSection = $('#contact').get(0);
-
-    if ($(contactSection).isInViewport()) {
-        $('#scroll-down').hide();
-    }
-
-    $(window).on('resize scroll', function() {
-        if ($(homeSection).isInViewport()) {
-            $('#scroll-down').show();
-            $('#scroll-down').attr("href", '#services');
-        }
-        if ($(studioSection).isInViewport()) {
-            $('#scroll-down').prop('href', '#works')
-        }
-        if ($(servicesSection).isInViewport()) {
-            $('#scroll-down').attr("href", '#studio');
-        }
-        if ($(worksSection).isInViewport()) {
-            $('#scroll-down').prop('href', '#crew')
-        }
-        if ($(crewSection).isInViewport()) {
-            $('#scroll-down').show();
-            $('#scroll-down').prop('href', '#contact')
-        }
-        if ($(contactSection).isInViewport()) {
-            $('#scroll-down').hide();
-        }
-    });
 
 
     /* Contact form
@@ -422,7 +417,6 @@
         smoothScroll();
         videoOptimizer();
         aos();
-        backToTop();
         emailjs();
         switchHeaders();
         openServicesDropdowns();
