@@ -882,6 +882,8 @@ input[type="button"].btn--primary {
   border-color: #ffffff;
   color: #ffffff;
   opacity: 0.69;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .btn.btn--primary:hover,
@@ -897,7 +899,7 @@ input[type="button"].btn--primary:focus {
   background: #ffffff;
   border-color: #ffffff;
   color: #000000;
-  opacity: 0.69;
+  opacity: 1;
 }
 
 /* button modifiers
@@ -2229,8 +2231,8 @@ html.no-csstransitions .home-scroll {
   position: relative;
 }
 
-.s-contact .row {
-  max-width: 1000px;
+.s-contact .row .contact-form {
+  max-width: 600px;
 }
 
 .contact-form {
@@ -2356,6 +2358,30 @@ html.no-csstransitions .home-scroll {
 }
 
 
+.contact-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+
+}
+
+.contact-info .info a {
+  display: flex;
+  margin-left: 50px;
+}
+
+.contact-info .fas {
+  padding: 5px;
+  margin-right: 5px;
+}
+
 
 /* ------------------------------------------------------------------- 
  * ## copyright
@@ -2381,45 +2407,7 @@ html.no-csstransitions .home-scroll {
  * responsive:
  * contact
  * ------------------------------------------------------------------- */
- @media only screen and (min-width: 1600px) {
-  .s-contact .row {
-    padding: 0;
-  }
-}
 @media only screen and (max-width: 1200px) {
-  .s-contact {
-    justify-content: flex-end;
-    height: auto;
-    padding: 42px 0;
-  }
-
-  .s-contact .row {
-    padding: 0 130px;
-  }
-
-  .contact-main {
-    margin-top: 13.2rem;
-  }
-
-  .contact-form {
-    flex-wrap: wrap;
-  }
-  .contact-email {
-    font-size: 5rem;
-  }
-
-  .contact-number {
-    font-size: 2.6rem;
-  }
-
-  .contact-address {
-    font-size: 2.4rem;
-  }
-
-  .contact-social {
-    font-size: 1.8rem;
-  }
-
   .cl-copyright {
     margin-top: 3rem;
   }
@@ -2428,17 +2416,6 @@ html.no-csstransitions .home-scroll {
   .cl-copyright {
     padding-right: 7.8rem;
   }
-}
-@media only screen and (max-width: 600px) {
-  .s-contact {
-    padding: 42px;
-    height: auto;
-  }
-
-  .s-contact .row {
-    padding: 0;
-  }
-
 }
 @media only screen and (max-width: 480px) {
   .cl-copyright {
@@ -2451,7 +2428,6 @@ html.no-csstransitions .home-scroll {
     padding: 0;
     text-align: center;
   }
-
   .cl-copyright span {
     font-size: 14px;
   }
