@@ -36,16 +36,13 @@
 
         $WIN.on('load', function() {
 
-            //force page scroll position to top at page refresh
-            // $('html, body').animate({ scrollTop: 0 }, 'normal');
-
-            // will first fade out the loading animation 
+            // will first fade out the loading animation
             $("#loader").fadeOut("slow", function() {
                 // will fade out the whole DIV that covers the website.
                 $("#preloader").delay(300).fadeOut("slow");
             });
 
-            // for hero content animations 
+            // for hero content animations
             $("html").removeClass('cl-preload');
             $("html").addClass('cl-loaded');
 
@@ -382,10 +379,15 @@
             mouseenter: function() {
                 $('.s-services .dropdown-left').addClass('opened');
                 $('.s-services .wrapper-left .fa-angle-down').hide();
+                $('.s-services .wrapper-left').css('opacity', '1');
             },
             mouseleave: function() {
                 $('.s-services .dropdown-left').removeClass('opened');
                 $('.s-services .wrapper-left .fa-angle-down').show();
+                $('.s-services .wrapper-left').css('opacity', '0.69');
+            },
+            click: function() {
+                $('.s-services .dropdown-left').toggleClass('opened');
             },
         });
 
@@ -395,10 +397,15 @@
             mouseenter: function() {
                 $('.s-services .dropdown-right').addClass('opened');
                 $('.s-services .wrapper-right .fa-angle-down').hide();
+                $('.s-services .wrapper-right').css('opacity', '1');
             },
             mouseleave: function() {
                 $('.s-services .dropdown-right').removeClass('opened');
                 $('.s-services .wrapper-right .fa-angle-down').show();
+                $('.s-services .wrapper-right').css('opacity', '0.69');
+            },
+            click: function() {
+                $('.s-services .dropdown-right').toggleClass('opened');
             },
         });
 
@@ -420,6 +427,7 @@
         emailjs();
         switchHeaders();
         openServicesDropdowns();
+
     })();
 
 })(jQuery);

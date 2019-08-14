@@ -46,7 +46,6 @@
  *  # contact
  *    ## contact social
  *    ## subscribe
- *    ## copyright
  *    ## go to top
  *
  * =================================================================== */
@@ -882,8 +881,8 @@ input[type="button"].btn--primary {
   border-color: #ffffff;
   color: #ffffff;
   opacity: 0.69;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn.btn--primary:hover,
@@ -1454,6 +1453,7 @@ input::-moz-focus-inner {
    display: flex;
    justify-content: space-between;
    width: 42%;
+   max-width: 690px;
    margin: 0;
    padding: 0;
    font-family: "metropolis-semibold", sans-serif;
@@ -1517,7 +1517,6 @@ input::-moz-focus-inner {
 }
 .s-home .row {
   margin: 0 auto;
-  padding: 0 63px;
 }
 .s-home::before {
   display: block;
@@ -1554,7 +1553,8 @@ input::-moz-focus-inner {
 
 .home-content__main .logo {
   opacity: 0.69;
-  width: 50%;
+  width: 42%;
+  max-width: 690px;
   margin: 0 auto;
   display: block;
 }
@@ -1639,7 +1639,7 @@ html.cl-loaded .home-content__main {
 }
 
 html.no-csstransitions .home-content__main {
-  opacity: 1;
+  opacity: 0.69;
 }
 
 
@@ -1712,7 +1712,7 @@ html.cl-loaded .home-scroll {
 }
 
 html.no-csstransitions .home-scroll {
-  opacity: 1;
+  opacity: 0.69;
 }
 
 /* ------------------------------------------------------------------- 
@@ -1723,10 +1723,8 @@ html.no-csstransitions .home-scroll {
   .home-content__main .logo {
     width: 100%;
   }
-}
-@media only screen and (max-width: 1000px) {
-  .home-content__main .logo {
-    width: 100%;
+  .home-content__main {
+    padding: 0 50px;
   }
 }
 
@@ -1772,14 +1770,9 @@ html.no-csstransitions .home-scroll {
   -webkit-transition: all 0.3s ease-in-out;
 }
 
-.s-services .wrapper:hover {
-  color: #ffffff;
-  cursor: pointer;
-}
-
 .s-services h1 {
   text-transform: uppercase;
-  letter-spacing: 1.25rem;
+  letter-spacing: 0.42rem;
   font-size: 18px;
   color: #fff;
   opacity: 0.69;
@@ -1881,7 +1874,6 @@ html.no-csstransitions .home-scroll {
   display: flex!important;
   justify-content: center;
   width: 100%;
-  /* margin: 0px 20px; */
   padding: 0;
 }
 
@@ -1894,16 +1886,20 @@ html.no-csstransitions .home-scroll {
 }
 
 .slick-slider .slick-arrow {
-  /* padding: 0 2rem; */
   font-size: 2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .slick-slider .slick-arrow:hover {
-  color: #b8b8b8;
+  color: #ffffff;
 }
 
+.slick-slider .fas {
+  font-size: 14px;
+}
 .slick-slider .fas.fa-angle-right {
   padding-left: 20px;
 }
@@ -2130,6 +2126,11 @@ html.no-csstransitions .home-scroll {
  *
  * ------------------------------------------------------------------- */
 
+section.s-crew {
+  height: auto;
+  min-height: 100%;
+}
+
 .crew__members {
   display: flex;
   justify-content: center;
@@ -2154,7 +2155,7 @@ html.no-csstransitions .home-scroll {
 }
 
 .crew__member .layer {
-  background: rgba(0, 0, 0, 0.69);
+  background: rgba(0, 0, 0, 0.42);
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
   width: 100%;
@@ -2166,7 +2167,6 @@ html.no-csstransitions .home-scroll {
 
 .crew__member .layer:hover {
   opacity: 0;
-  cursor: none;
 }
 
 .crew__member p {
@@ -2231,12 +2231,9 @@ html.no-csstransitions .home-scroll {
   position: relative;
 }
 
-.s-contact .row .contact-form {
-  max-width: 600px;
-}
-
 .contact-form {
-  width: 50%;
+  width: 42%;
+  max-width: 690px;
   margin: 0 auto;
 }
 
@@ -2274,31 +2271,36 @@ html.no-csstransitions .home-scroll {
 .contact-form input::-webkit-input-placeholder,
 .contact-form select::-webkit-input-placeholder,
 .contact-form textarea::-webkit-input-placeholder {
-  color: #4f4f4f;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
 }
 
 .contact-form input:-moz-placeholder,
 .contact-form select:-moz-placeholder,
 .contact-form textarea:-moz-placeholder {
-  color: #4f4f4f;    /* Firefox 18- */
+  color: rgba(255, 255, 255, 0.5);    /* Firefox 18- */
+  font-size: 14px;
 }
 
 .contact-form input::-moz-placeholder,
 .contact-form select::-moz-placeholder,
 .contact-form textarea::-moz-placeholder {
-  color: #4f4f4f;    /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.5);    /* Firefox 19+ */
+  font-size: 14px;
 }
 
 .contact-form input:-ms-input-placeholder,
 .contact-form select:-ms-input-placeholder,
 .contact-form textarea:-ms-input-placeholder {
-  color: #4f4f4f;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
 }
 
 .contact-form input.placeholder,
 .contact-form select.placeholder,
 .contact-form textarea.placeholder {
-  color: #4f4f4f !important;
+  color: rgba(0, 0, 0, 0.69) !important;
+  font-size: 16px;
 }
 
 .message-warning, 
@@ -2365,11 +2367,19 @@ html.no-csstransitions .home-scroll {
   padding: 20px 0;
 }
 
+.contact-footer .row {
+  display: flex;
+  position: relative;
+}
+
+.contact-footer .fas {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
 .contact-info {
   display: flex;
-  justify-content: flex-end;
   font-size: 14px;
-
 }
 
 .contact-info .info a {
@@ -2377,62 +2387,37 @@ html.no-csstransitions .home-scroll {
   margin-left: 50px;
 }
 
-.contact-info .fas {
-  padding: 5px;
-  margin-right: 5px;
+.contact-info .info:first-child a {
+  margin-left: 0;
 }
 
-
-/* ------------------------------------------------------------------- 
- * ## copyright
- * ------------------------------------------------------------------- */
-.cl-copyright {
-  margin-top: 2.1rem;
+.contact-footer .open-source {
+  position: absolute;
+  right: 0;
 }
 
-.cl-copyright span {
-  font-size: 15px;
-  display: inline-block;
-}
-.cl-copyright span::after {
-  content: "|";
-  display: inline-block;
-  padding: 0 1rem 0 1.2rem;
-  color: rgba(255, 255, 255, 0.1);
-}
-.cl-copyright span:last-child::after {
-  display: none;
-}
 /* ------------------------------------------------------------------- 
  * responsive:
  * contact
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1200px) {
-  .cl-copyright {
-    margin-top: 3rem;
+@media only screen and (max-width: 1000px) {
+  .contact-form {
+    width: 100%;
+  }
+  .contact-info {
+    flex-direction: column;
+  }
+  .contact-info .info a {
+    margin-left: 0;
+  }
+  .contact-info .info p {
+    margin-bottom: 0;
+    padding: 3px 3px 3px 0;
   }
 }
-@media only screen and (max-width: 800px) {
-  .cl-copyright {
-    padding-right: 7.8rem;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .cl-copyright {
-    margin-top: 0;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .cl-copyright {
-    margin-top: 9rem;
-    padding: 0;
-    text-align: center;
-  }
-  .cl-copyright span {
-    font-size: 14px;
-  }
-  .cl-copyright span::after {
-    display: none;
+@media only screen and (max-width: 600px) {
+  .contact-form textarea {
+    min-height: 12rem;
   }
 }
 
