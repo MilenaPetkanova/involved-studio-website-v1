@@ -240,11 +240,11 @@
         });
 
         // style about-text according to s-studio slider middle slide width
-        var middleImageWidth = $('.s-studio .slick-center .thumb-link').width();
+        var middleImageWidth = $('.s-studio .slick-center .thumb-link').outerWidth();
         var aboutTextWidth = middleImageWidth - 20;
         var aboutTextMarginLeft = middleImageWidth + 10;
 
-        if ($(window).width() > 1200) {
+        if ($(window).outerWidth() > 1200) {
             $('.about-text').css('width', aboutTextWidth + 'px');
             $('.about-text').css('margin-left', aboutTextMarginLeft + 'px');
         }
@@ -356,7 +356,7 @@
     * ------------------------------------------------------ */
 
     var switchHeaders = function() {
-        if ($(window).width() >= 1000) {
+        if ($(window).outerWidth() >= 1000) {
             $('.s-header').addClass('wide-header');
             $('.s-header').removeClass('hamburger-header');
             $("html").addClass('menu-is-open');
