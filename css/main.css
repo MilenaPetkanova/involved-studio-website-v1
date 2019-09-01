@@ -108,14 +108,11 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover {
   opacity: 1;
 }
 
-a:hover,
-a:active {
+a:hover {
   outline: 0;
 }
 
@@ -2131,6 +2128,10 @@ section.s-crew {
   min-height: 100%;
 }
 
+section .row.crew {
+  max-width: 1110px;
+}
+
 .crew__members {
   display: flex;
   justify-content: center;
@@ -2211,7 +2212,7 @@ section.s-crew {
 .crew__member .description p {
   font-size: 12px;
   line-height: 18px;
-  text-align: justify;
+  text-align: left;
   letter-spacing: 0.69px;
 }
 
@@ -2311,7 +2312,8 @@ section.s-crew {
   line-height: 2;
   padding: 3rem;
   margin-bottom: 3.6rem;
-  width: 100%;
+  width: 42%;
+  margin: 0 auto;
 }
 
 .message-warning {
@@ -2385,6 +2387,11 @@ section.s-crew {
 .contact-info .info a {
   display: flex;
   margin-left: 50px;
+}
+
+.contact-info .phone a:hover {
+  cursor: default;
+  opacity: 0.69;
 }
 
 .contact-info .info:first-child a {
