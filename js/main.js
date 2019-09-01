@@ -3,6 +3,8 @@
  *
  * ------------------------------------------------------------------- */
 
+// var youtubeEmbedds;
+
 (function($) {
 
     "use strict";
@@ -297,29 +299,52 @@
     /* Embedded video
     * ------------------------------------------------------ */
     var videoOptimizer = function() {
-        var youtube = document.querySelectorAll( ".youtube" );
 
-        for (var i = 0; i < youtube.length; i++) {
+        var youtubeApi = "https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=PLj05wv8Ap5Kt-XtllnI2_l1Q2FKX5uEcv&key=AIzaSyBsitlgDj9HfOy-3D5NMJDm_cqC38NvaQc";
 
-            var source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.embed +'/sddefault.jpg';
+        var playlistThumbnail;
 
-            var image = new Image();
-            image.src = source;
-            image.addEventListener( "load", function() {
-                youtube[ i ].appendChild( image );
-            }( i ) );
+        $.get(youtubeApi, function(data) {
 
-            youtube[i].addEventListener( "click", function() {
-                var iframe = document.createElement( "iframe" );
+            playlistThumbnail = data.items[0].snippet.thumbnails.high.url;
+            console.log(playlistThumbnail);
 
-                iframe.setAttribute( "frameborder", "0" );
-                iframe.setAttribute( "allowfullscreen", "" );
-                iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
+            // var playlistThumbnail = dataJSON;
 
-                this.innerHTML = "";
-                this.appendChild( iframe );
-            } );
-        };
+            // console.log(data);
+            // console.log(playlistThumbnail);
+        })
+        .done(function() {
+
+            var youtube = document.querySelectorAll( ".youtube" );
+
+            console.log(youtube);
+    
+            for (var i = 0; i < youtube.length; i++) {
+    
+                var source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.imageSrc +'/sddefault.jpg';
+                console.log(source);
+              
+                var image = new Image();
+                image.src = playlistThumbnail;
+                image.addEventListener( "load", function() {
+                    youtube[ i ].appendChild( image );
+                }( i ) );
+    
+                youtube[i].addEventListener( "click", function() {
+                    var iframe = document.createElement( "iframe" );
+    
+                    iframe.setAttribute( "frameborder", "0" );
+                    iframe.setAttribute( "allowfullscreen", "" );
+                    iframe.setAttribute( "allow", "autoplay; encrypted-media" );
+                    iframe.setAttribute( "src", "https://www.youtube.com/embed/videoseries?list="+ this.dataset.embed );
+    
+                    this.innerHTML = "";
+                    this.appendChild( iframe );
+                } );
+            };
+        });
+
     };
 
 
@@ -412,6 +437,14 @@
     };
 
 
+    /* Detect if mobile device and attach href
+    * ------------------------------------------------------ */
+    var detectMobileDevice = function() {
+        if( screen.width <= 480 ) {
+            $('.contact-info .phone a').attr('href', '+359897808715');
+        }
+    };
+
     /* Initialize
     * ------------------------------------------------------ */
     (function clInit() {
@@ -422,12 +455,13 @@
         photoswipe();
         slickSliders();
         smoothScroll();
-        videoOptimizer();
+        // videoOptimizer();
         aos();
         emailjs();
         switchHeaders();
         openServicesDropdowns();
-
+        detectMobileDevice();
     })();
 
 })(jQuery);
+
