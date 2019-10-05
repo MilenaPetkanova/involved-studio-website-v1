@@ -1549,7 +1549,7 @@ input::-moz-focus-inner {
 }
 
 .home-content__main .logo {
-  opacity: 0.69;
+  opacity: 0.9;
   width: 42%;
   max-width: 690px;
   margin: 0 auto;
@@ -1772,7 +1772,7 @@ html.no-csstransitions .home-scroll {
   letter-spacing: 0.42rem;
   font-size: 18px;
   color: #fff;
-  opacity: 0.69;
+  opacity: 1;
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
@@ -1796,6 +1796,18 @@ html.no-csstransitions .home-scroll {
   -webkit-transition: all 0.3s ease-in-out;
 }
 
+.s-services .dropdown p {
+  font-family: "metropolis-semibold", sans-serif;
+  font-size: 14px;
+  opacity: 0.69;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.s-services .dropdown p:hover {
+  opacity: 1;
+}
+
 .s-services .dropdown.opened {
   visibility: visible;
   opacity: 1;
@@ -1805,10 +1817,6 @@ html.no-csstransitions .home-scroll {
 
 .s-services .dropdown-right {
   left: 50%;
-}
-
-.s-services p:hover {
-  color: #ffffff;
 }
 
 
@@ -2033,12 +2041,14 @@ html.no-csstransitions .home-scroll {
 }
 
 .slick-current .video-text {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .video-text {
+  font-size: 16px;
   line-height: 1.5;
   text-align: center;
+  text-transform: capitalize;
   letter-spacing: 1.4px;
   font-family: "metropolis-semibold", sans-serifserif;
 }
@@ -2371,6 +2381,7 @@ section .row.crew {
 
 .contact-footer .row {
   display: flex;
+  justify-content: center;
   position: relative;
 }
 
@@ -2403,6 +2414,13 @@ section .row.crew {
   right: 0;
 }
 
+.contact-footer .open-source a {
+  opacity: 0.5;
+}
+.contact-footer .open-source a:hover {
+  opacity: 1;
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * contact
@@ -2416,15 +2434,31 @@ section .row.crew {
   }
   .contact-info .info a {
     margin-left: 0;
+    align-items: center;
   }
   .contact-info .info p {
     margin-bottom: 0;
     padding: 3px 3px 3px 0;
   }
+
+  .contact-footer .open-source {
+    bottom: 1px;
+  }
 }
+
 @media only screen and (max-width: 600px) {
   .contact-form textarea {
     min-height: 12rem;
+  }
+  .contact-form button,
+  .contact-form .btn {
+    margin-top: 2rem;
+  }
+  .contact-form input[type="email"],
+  .contact-form input[type="text"],
+  .contact-form textarea,
+  .contact-form select {
+    margin-bottom: 0rem;
   }
 }
 
