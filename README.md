@@ -31,4 +31,4 @@ External Javascript Files:
  - EmailJS (https://www.emailjs.com/)
 
 ## License
-[The MIT License (MIT)](LICENSE)
+[The MIT License (MIT)](LICENSE.md)
