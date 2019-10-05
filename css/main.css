@@ -1762,9 +1762,15 @@ html.no-csstransitions .home-scroll {
 
 .s-services .fa-angle-down {
   position: absolute;
-  padding-top: 20px;
+  margin-top: 20px;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+.s-services .fa-angle-down.opened {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transform: rotate(180deg);
 }
 
 .s-services h1 {
@@ -2040,11 +2046,38 @@ html.no-csstransitions .home-scroll {
   justify-content: center;
 }
 
+.showcase .youtube img {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+.showcase .youtube i {
+  font-size: 50px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  opacity: 0.69;
+  z-index: 100;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+.showcase a:hover p,
+.showcase a:hover i {
+  opacity: 1;
+}
+.showcase a:hover img {
+  opacity: 0.5;
+}
+
+/* .showcase__slide:focus {
+  outline-color: black;
+} */
+
 .slick-current .video-text {
   font-size: 16px;
 }
 
 .video-text {
+  outline-color: black;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
@@ -2054,14 +2087,17 @@ html.no-csstransitions .home-scroll {
 }
 .video-text p {
   margin-bottom: 1rem;
+  opacity: 0.69;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
-.video-text a {
+/* .video-text a {
   color: #555555;
   font-weight: 400;
 }
 .video-text a:hover {
   color: #fff;
-}
+} */
 
 
 /* ------------------------------------------------------------------- 

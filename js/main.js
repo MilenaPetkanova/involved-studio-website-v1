@@ -303,45 +303,34 @@
 
     /* Embedded video
     * ------------------------------------------------------ */
-    var videoOptimizer = function() {
+   var videoOptimizer = function() {
 
-        var playlistThumbnail;
+        var youtubeElements = document.querySelectorAll( ".youtube" );
 
-        $.get(apiKeys.youtube, function(data) {
+        for (var i = 0; i < youtubeElements.length; i++) {
+            (function(index) {
 
-            playlistThumbnail = data.items[0].snippet.thumbnails.high.url;
-            console.log(data);
+                var playlistElem = youtubeElements[i];
+                var playlistThumbnail;
 
-        })
-        .done(function() {
+                var url = 'https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=' + playlistElem.dataset.embed + '&key=' + apiKeys.youtube;
 
-            var youtube = document.querySelectorAll( ".youtube" );
+                $.get(url, function(data) {
+                    playlistThumbnail = data.items[0].snippet.thumbnails.high.url;
+                }).done(function() {
+                    var image = new Image();
+                    image.src = playlistThumbnail;
 
-            for (var i = 0; i < youtube.length; i++) {
+                    image.addEventListener("load", function() {
+                        playlistElem.appendChild(image);
+                    }(index));
+                });
 
-                var source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.imageSrc +'/sddefault.jpg';
-
-                var image = new Image();
-                image.src = playlistThumbnail;
-                image.addEventListener( "load", function() {
-                    youtube[ i ].appendChild( image );
-                }( i ) );
-
-                youtube[i].addEventListener( "click", function() {
-                    var iframe = document.createElement( "iframe" );
-
-                    iframe.setAttribute( "frameborder", "0" );
-                    iframe.setAttribute( "allowfullscreen", "" );
-                    iframe.setAttribute( "allow", "autoplay; encrypted-media" );
-                    iframe.setAttribute( "src", "https://www.youtube.com/embed/videoseries?list="+ this.dataset.embed );
-
-                    this.innerHTML = "";
-                    this.appendChild( iframe );
-                } );
-            };
-        });
+            })(i);
+        };
 
     };
+
 
 
     /* Contact form
@@ -395,16 +384,18 @@
    var openServicesDropdowns = function() {
 
        // left dropdown logic
-        $('.s-services .wrapper-left, .s-services .dropdown-left').on({
+        $('.s-services .wrapper-left').on({
             click: function() {
                 $('.s-services .dropdown-left').toggleClass('opened');
+                $('.s-services .wrapper-left .fa-angle-down').toggleClass('opened');
             },
         });
 
         // right dropdown logic
-        $('.s-services .wrapper-right, .s-services .dropdown-right').on({
+        $('.s-services .wrapper-right').on({
             click: function() {
                 $('.s-services .dropdown-right').toggleClass('opened');
+                $('.s-services .wrapper-right .fa-angle-down').toggleClass('opened');
             },
         });
 
