@@ -2,30 +2,9 @@
  * Main JS
  *
  * ------------------------------------------------------------------- */
-
 (function($) {
 
     "use strict";
-
-    var cfg = {
-        scrollDuration : 800, // smoothscroll duration
-        // mailChimpURL   : 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc'   // mailchimp url
-    },
-
-    $WIN = $(window);
-
-    // Add the User Agent to the <html>
-    // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-
-    // Variables
-    var homeSection = $('#home').get(0);
-    var servicesSection = $('#services').get(0);
-    var studioSection = $('#studio').get(0);
-    var worksSection = $('#works').get(0);
-    var crewSection = $('#crew').get(0);
-    var contactSection = $('#contact').get(0);
 
 
     /* Preloader
@@ -34,7 +13,7 @@
 
         $("html").addClass('cl-preload');
 
-        $WIN.on('load', function() {
+        $(window).on('load', function() {
 
             // will first fade out the loading animation
             $("#loader").fadeOut("slow", function() {
@@ -68,6 +47,13 @@
 
         return elementBottom > viewportTop && elementTop < viewportBottom;
     };
+
+    var homeSection = $('#home').get(0);
+    var servicesSection = $('#services').get(0);
+    var studioSection = $('#studio').get(0);
+    var worksSection = $('#works').get(0);
+    var crewSection = $('#crew').get(0);
+    var contactSection = $('#contact').get(0);
 
     $(window).on('resize scroll', function() {
         if ($(homeSection).isInViewport()) {
@@ -113,9 +99,9 @@
 
         var menuTrigger = $('.hamburger-header .header-menu-toggle');
 
-        $WIN.on('scroll', function() {
+        $(window).on('scroll', function() {
 
-            if ($WIN.scrollTop() > 150) {
+            if ($(window).scrollTop() > 150) {
                 menuTrigger.addClass('opaque');
             }
             else {
@@ -158,7 +144,7 @@
     };
 
 
-   /* photoswipe
+   /* Photoswipe
     * ----------------------------------------------------- */
     var photoswipe = function() {
         var items = [],
@@ -211,7 +197,7 @@
     };
 
 
-    /* slick sliders
+    /* Slick sliders
      * ------------------------------------------------------ */
     var slickSliders = function() {
 
@@ -274,6 +260,8 @@
     * ------------------------------------------------------ */
     var smoothScroll = function() {
 
+        var scrollDuration = 800;
+
         $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
             $target    = $(target);
@@ -283,7 +271,7 @@
 
             $('html, body').stop().animate({
                 'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing').promise().done(function () {
+            }, scrollDuration, 'swing').promise().done(function () {
 
                 // only on hamburger-header check if menu is open
                 if ($('body').hasClass('menu-is-open')) {
@@ -317,11 +305,9 @@
     * ------------------------------------------------------ */
     var videoOptimizer = function() {
 
-        var youtubeApi = "https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=PLnzwYtYvxGGWNuDaNk6NkNRfvA-7y60VG&key=AIzaSyBsitlgDj9HfOy-3D5NMJDm_cqC38NvaQc";
-
         var playlistThumbnail;
 
-        $.get(youtubeApi, function(data) {
+        $.get(apiKeys.youtube, function(data) {
 
             playlistThumbnail = data.items[0].snippet.thumbnails.high.url;
             console.log(data);
@@ -331,27 +317,24 @@
 
             var youtube = document.querySelectorAll( ".youtube" );
 
-            console.log(youtube);
-    
             for (var i = 0; i < youtube.length; i++) {
-    
+
                 var source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.imageSrc +'/sddefault.jpg';
-                console.log(source);
-              
+
                 var image = new Image();
                 image.src = playlistThumbnail;
                 image.addEventListener( "load", function() {
                     youtube[ i ].appendChild( image );
                 }( i ) );
-    
+
                 youtube[i].addEventListener( "click", function() {
                     var iframe = document.createElement( "iframe" );
-    
+
                     iframe.setAttribute( "frameborder", "0" );
                     iframe.setAttribute( "allowfullscreen", "" );
                     iframe.setAttribute( "allow", "autoplay; encrypted-media" );
                     iframe.setAttribute( "src", "https://www.youtube.com/embed/videoseries?list="+ this.dataset.embed );
-    
+
                     this.innerHTML = "";
                     this.appendChild( iframe );
                 } );
@@ -371,9 +354,9 @@
             var formData = new FormData(this);
             formData.append('service_id', 'gmail');
             formData.append('template_id', 'template_EIxy7YQS');
-            formData.append('user_id', 'user_Lt4mdKpoobIxgiHp7l9gB');
+            formData.append('user_id', emailJsUserId);
 
-            $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+            $.ajax(apiKeys.emailjsApi, {
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -436,6 +419,7 @@
         }
     };
 
+
     /* Initialize
     * ------------------------------------------------------ */
     (function clInit() {
@@ -453,6 +437,7 @@
         switchHeaders();
         openServicesDropdowns();
         detectMobileDevice();
+
     })();
 
 })(jQuery);
