@@ -378,6 +378,21 @@
     };
 
 
+    /* Header wide or hamburger
+    * ------------------------------------------------------ */
+
+    var appendSmallAvatar = function() {
+
+        $(window).on('resize load', function() {
+            if ($(window).outerWidth() < 420) {
+                $('.avatar-background').css('background-image', 'none');
+                $('.avatar-small').show();
+            }
+        });
+
+    };
+
+
     /* Open and close services dropdowns
     * ------------------------------------------------------ */
 
@@ -406,7 +421,7 @@
     * ------------------------------------------------------ */
     var detectMobileDevice = function() {
         if( screen.width <= 480 ) {
-            $('.contact-info .phone a').attr('href', '+359897808715');
+            $('.contact-info .phone a').attr('href', 'tel:+359897808715');
         }
     };
 
@@ -426,6 +441,7 @@
         aos();
         emailjs();
         switchHeaders();
+        appendSmallAvatar();
         openServicesDropdowns();
         detectMobileDevice();
 

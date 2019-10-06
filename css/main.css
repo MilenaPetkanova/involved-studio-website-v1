@@ -1717,6 +1717,10 @@ html.no-csstransitions .home-scroll {
  * home
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 1000px) {
+  .s-home .row {
+    width: 100%;
+    padding: 0 70px;
+  }
   .home-content__main .logo {
     width: 100%;
   }
@@ -1724,7 +1728,11 @@ html.no-csstransitions .home-scroll {
     padding: 0 50px;
   }
 }
-
+@media only screen and (max-width: 600px) {
+  .s-home .row {
+    padding: 0 30px;
+  }
+}
 
 /* ===================================================================
  * # services
@@ -1834,31 +1842,39 @@ html.no-csstransitions .home-scroll {
 @media only screen and (max-width: 900px) {
   .s-services .row {
     width: 100%;
+    padding: 0;
   }
+
+}
+@media only screen and (max-width: 900px) {
   .s-services h1 {
     font-size: 16px;
     letter-spacing: 0.07em;
+  }
+  .s-services .dropdown {
+    padding: 0 15px;
   }
 }
 @media only screen and (max-width: 420px) {
   .s-services .row {
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px;
   }
   .s-services .wrapper {
-    padding: 30px 0;
+    padding: 35px 0;
+  }
+  .s-services h1 {
+    font-size: 14px;
   }
   .s-services .col-left {
     border-right: 2px solid rgba(255, 255, 255, 0.42)
   }
   .s-services .fa-angle-down {
-    padding-top: 5px;
-  }
-  .s-services .dropdown {
-    padding: 0 15px;
+    margin-top: 5px;
   }
   .s-services p {
-    margin-bottom: 15px;
+    font-size: 12px;
+    margin-bottom: 25px;
     line-height: 21px;
   }
 }
@@ -1873,7 +1889,8 @@ html.no-csstransitions .home-scroll {
   position: absolute;
   top: 100%;
   padding-top: 30px;
-  text-align: justify;
+  text-align: left;
+  letter-spacing: 0.42px;
   background: #000000;
 }
 
@@ -2026,8 +2043,10 @@ html.no-csstransitions .home-scroll {
       padding-left: 30px;
       padding-right: 30px;
       line-height: 21px;
-      z-index: 800;
     }
+  }
+  @media only screen and (max-width: 1000px) {
+    
   }
 
 
@@ -2064,13 +2083,10 @@ html.no-csstransitions .home-scroll {
 .showcase a:hover i {
   opacity: 1;
 }
+
 .showcase a:hover img {
   opacity: 0.5;
 }
-
-/* .showcase__slide:focus {
-  outline-color: black;
-} */
 
 .slick-current .video-text {
   font-size: 16px;
@@ -2091,77 +2107,21 @@ html.no-csstransitions .home-scroll {
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
-/* .video-text a {
-  color: #555555;
-  font-weight: 400;
-}
-.video-text a:hover {
-  color: #fff;
-} */
 
 
 /* ------------------------------------------------------------------- 
  * responsive:
  * works
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1500px) {
-  .masonry-wrap {
-    width: 1200px;
-  }
-
-  .masonry .grid-sizer,
-  .masonry__brick {
-    width: 400px;
-  }
-}
-@media only screen and (max-width: 1350px) {
-  .masonry-wrap {
-    width: 1158px;
-  }
-
-  .masonry .grid-sizer,
-  .masonry__brick {
-    width: 386px;
-  }
-}
-@media only screen and (max-width: 1300px) {
-  .masonry-wrap {
-    width: 990px;
-  }
-
-  .masonry .grid-sizer,
-  .masonry__brick {
-    width: 330px;
-  }
-}
-@media only screen and (max-width: 1100px) {
-  .masonry-wrap {
-    width: 90%;
-    max-width: 800px;
-  }
-
-  .masonry .grid-sizer,
-  .masonry__brick {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .masonry-wrap {
-    margin-top: 3rem;
-  }
-}
 @media only screen and (max-width: 600px) {
-  .masonry .grid-sizer,
-  .masonry__brick {
-    width: 100%;
+  .video-text p {
+    font-size: 14px;
   }
-}
-@media only screen and (max-width: 400px) {
-  .masonry-wrap {
-    width: auto;
-  }
-}
 
+  .showcase .youtube i {
+    font-size: 30px;
+  }
+}
 
 
 /* ===================================================================
@@ -2192,13 +2152,26 @@ section .row.crew {
 }
 
 .crew__member .avatar {
-  background-image: url('../images/avatars/miro.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.crew__member .avatar-small {
+  display: none;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.crew__member .avatar-background {
   width: 25rem;
   height: 25rem;
   margin-bottom: 1rem;
   position: relative;
+}
+
+.crew__member#miroslav .avatar {
+  background-image: url('../images/avatars/miro.jpg');
 }
 
 .crew__member .layer {
@@ -2267,6 +2240,15 @@ section .row.crew {
  * crew
  * ------------------------------------------------------------------- */
 
+  @media (max-width: 420px) {
+    .crew__member .layer:hover {
+      opacity: 1;
+    }
+
+    .crew__member .description {
+      padding: 0 15px;
+    }
+  }
 
 
 /* ===================================================================
