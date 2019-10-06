@@ -297,6 +297,10 @@ html {
     box-sizing: inherit;
 }
 
+*:focus {
+    outline: 0;
+}
+
 body {
     font-weight: normal;
     line-height: 1;
