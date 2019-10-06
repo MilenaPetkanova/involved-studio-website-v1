@@ -6,8 +6,8 @@ Website for Involved Studio.
 
 ## Website urls
 
-demo.involved.studio
-involved.studio
+- https://demo.involved.studio
+- http://involved.studio
 
 ## Sources and credits
 
