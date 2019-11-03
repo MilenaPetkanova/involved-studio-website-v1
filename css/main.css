@@ -7,6 +7,7 @@
  *  TOC:
  *  # base style overrides
  *    ## links
+ *    ## slick-slider
  *  # typography & general theme styles
  *    ## Lists
  *    ## responsive video container
@@ -114,6 +115,33 @@ a:hover {
 
 a:hover {
   outline: 0;
+}
+
+
+/* -------------------------------------------------------------------
+ * ## slick-slider
+ * ------------------------------------------------------------------- */
+
+ .slick-slider .slick-arrow {
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.slick-slider .slick-arrow:hover {
+  color: #ffffff;
+}
+
+.slick-slider .fas {
+  font-size: 14px;
+}
+.slick-slider .fas.fa-angle-right {
+  padding-left: 20px;
+}
+.slick-slider .fas.fa-angle-left {
+  padding-right: 20px;
 }
 
 
@@ -1885,6 +1913,21 @@ html.no-csstransitions .home-scroll {
 *
 * ------------------------------------------------------------------- */
 
+.slick-slider {
+  display: flex!important;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
+.studio__slider .slick-slide {
+  transform: scale(0.7, 0.7);
+  transition: transform 0.3s;
+}
+.studio__slider .slick-center {
+  transform: scale(1, 1);
+}
+
 .s-studio .about-text {
   position: absolute;
   top: 100%;
@@ -1894,46 +1937,6 @@ html.no-csstransitions .home-scroll {
   background: #000000;
 }
 
-/* -------------------------------------------------------------------
- * ## slider
- * ------------------------------------------------------------------- */
-
- .slick-slider {
-  display: flex!important;
-  justify-content: center;
-  width: 100%;
-  padding: 0;
-}
-
-.slick-slider .slick-slide {
-  transform: scale(0.7, 0.7);
-  transition: transform 0.3s;
-}
-.slick-slider .slick-center {
-  transform: scale(1, 1);
-}
-
-.slick-slider .slick-arrow {
-  font-size: 2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.slick-slider .slick-arrow:hover {
-  color: #ffffff;
-}
-
-.slick-slider .fas {
-  font-size: 14px;
-}
-.slick-slider .fas.fa-angle-right {
-  padding-left: 20px;
-}
-.slick-slider .fas.fa-angle-left {
-  padding-right: 20px;
-}
 
 /* ------------------------------------------------------------------- 
 * ## item-folio
@@ -2065,31 +2068,17 @@ html.no-csstransitions .home-scroll {
   justify-content: center;
 }
 
-.showcase .youtube img {
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-.showcase .youtube i {
-  font-size: 50px;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  opacity: 0.69;
-  z-index: 100;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-.showcase a:hover p,
-.showcase a:hover i {
-  opacity: 1;
+.showcase .container {
+  max-width: 960px;
+  margin: auto;
+  background: transparent;
 }
 
-.showcase a:hover img {
-  opacity: 0.5;
+.showcase .yesp-title-wrapper {
+  display: none;
 }
-
-.slick-current .video-text {
-  font-size: 16px;
+.showcase .yesp-playlist-channel {
+  display: none;
 }
 
 .video-text {
@@ -2102,8 +2091,9 @@ html.no-csstransitions .home-scroll {
   font-family: "metropolis-semibold", sans-serifserif;
 }
 .video-text p {
+  margin-top: 3rem;
   margin-bottom: 1rem;
-  opacity: 0.69;
+  color: #fff;
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
@@ -2114,6 +2104,10 @@ html.no-csstransitions .home-scroll {
  * works
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 600px) {
+  section .showcase {
+    width: 100%;
+  }
+
   .video-text p {
     font-size: 14px;
   }

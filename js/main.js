@@ -197,11 +197,11 @@
     };
 
 
-    /* Slick sliders
+    /* Studio slider
      * ------------------------------------------------------ */
-    var slickSliders = function() {
+    var studioSlider = function() {
 
-        $('.slider').slick({
+        $('.studio__slider').slick({
             dots: false,
             centerMode: true,
             centerPadding: '0px',
@@ -237,6 +237,22 @@
     };
 
 
+    /* Showcase slider
+     * ------------------------------------------------------ */
+    var showcaseSlider = function() {
+
+        $('.showcase__slider').slick({
+            dots: false,
+            infinite: true,
+			speed: 1000,
+			nextArrow: '<span class="nextArrow"><i class="fas fa-angle-right"></i></span>',
+  		    prevArrow: '<span class="prevArrow"><i class="fas fa-angle-left"></i></span>',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+    };
+
+
    /* Go to specific slide
     * ------------------------------------------------------ */
     var goToSlide = function() {
@@ -251,7 +267,12 @@
                 $('.showcase__slider').slick('slickGoTo', goToIndex);
             }, 1000);
         });
+    };
 
+
+   /* Go to specific slide
+    * ------------------------------------------------------ */
+    var youtubePlaylists = function () {
 
     };
 
@@ -299,38 +320,6 @@
         });
 
     };
-
-
-    /* Embedded video
-    * ------------------------------------------------------ */
-   var videoOptimizer = function() {
-
-        var youtubeElements = document.querySelectorAll( ".youtube" );
-
-        for (var i = 0; i < youtubeElements.length; i++) {
-            (function(index) {
-
-                var playlistElem = youtubeElements[i];
-                var playlistThumbnail;
-
-                var url = 'https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=' + playlistElem.dataset.embed + '&key=' + apiKeys.youtube;
-
-                $.get(url, function(data) {
-                    playlistThumbnail = data.items[0].snippet.thumbnails.high.url;
-                }).done(function() {
-                    var image = new Image();
-                    image.src = playlistThumbnail;
-
-                    image.addEventListener("load", function() {
-                        playlistElem.appendChild(image);
-                    }(index));
-                });
-
-            })(i);
-        };
-
-    };
-
 
 
     /* Contact form
@@ -434,10 +423,11 @@
         menuOnScrolldown();
         offCanvas();
         photoswipe();
-        slickSliders();
+        showcaseSlider();
+        studioSlider();
         goToSlide();
+        youtubePlaylists();
         smoothScroll();
-        videoOptimizer();
         aos();
         emailjs();
         switchHeaders();
