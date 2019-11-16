@@ -2189,8 +2189,23 @@ section .row.crew {
   position: relative;
 }
 
+.crew__member#sava .avatar {
+  background-image: url('../images/avatars/sava.jpg');
+}
 .crew__member#miroslav .avatar {
-  background-image: url('../images/avatars/miro.jpg');
+  background-image: url('../images/avatars/miroslav.jpg');
+}
+.crew__member#goro .avatar {
+  background-image: url('../images/avatars/goro.jpg');
+}
+.crew__member#alex .avatar {
+  background-image: url('../images/avatars/alex.jpg');
+}
+.crew__member#alek .avatar {
+  background-image: url('../images/avatars/alek.jpg');
+}
+.crew__member#lorem .avatar {
+  background-image: url('../images/avatars/lorem.jpg');
 }
 
 .crew__member .layer {
@@ -2219,6 +2234,7 @@ section .row.crew {
   position: absolute;
   width: 25rem;
   padding: 10px;
+  z-index: 999;
 }
 
 .crew__member .name p {
@@ -2244,6 +2260,7 @@ section .row.crew {
   position: absolute;
   top: 44px;
   width: 25rem;
+  height: 100%;
   padding: 15px;
 }
 
