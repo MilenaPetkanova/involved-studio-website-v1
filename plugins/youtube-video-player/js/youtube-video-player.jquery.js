@@ -2236,7 +2236,7 @@
     continuous: true,
     first_video: 0,
     show_playlist: 'auto',
-    playlist_type: 'horizontal',
+    playlist_type: 'vertical',
     show_channel_in_playlist: false,
     show_channel_in_title: false,
     width: false,

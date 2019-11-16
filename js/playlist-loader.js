@@ -5,19 +5,22 @@ $(window).on('load', function(){
   });
 
   $("#playlist-sound-design").youtube_video({
-      playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
+    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
   });
 
   $("#playlist-record-mix-master").youtube_video({
-      playlist: 'PLnzwYtYvxGGX8W5QNxlDEkX9fPl4ksUuv',
+    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
+    // playlist: 'PLnzwYtYvxGGX8W5QNxlDEkX9fPl4ksUuv',
   });
 
   $("#playlist-film-theatre").youtube_video({
-      playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
+    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
+    // playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
   });
 
   $("#playlist-advertisement").youtube_video({
-      playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
+    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
+    // playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
   });
 
 });

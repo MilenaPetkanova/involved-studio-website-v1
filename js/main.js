@@ -242,14 +242,15 @@
     var showcaseSlider = function() {
 
         $('.showcase__slider').slick({
-            dots: false,
+            dots: true,
             infinite: true,
-			speed: 1000,
-			nextArrow: '<span class="nextArrow"><i class="fas fa-angle-right"></i></span>',
-  		    prevArrow: '<span class="prevArrow"><i class="fas fa-angle-left"></i></span>',
+            speed: 1000,
+            arrows: false,
             slidesToShow: 1,
             slidesToScroll: 1,
         });
+
+        $('.yesp .yesp-playlist').css('width', '90px !important');
     };
 
 
@@ -267,13 +268,6 @@
                 $('.showcase__slider').slick('slickGoTo', goToIndex);
             }, 1000);
         });
-    };
-
-
-   /* Go to specific slide
-    * ------------------------------------------------------ */
-    var youtubePlaylists = function () {
-
     };
 
 
@@ -426,7 +420,6 @@
         showcaseSlider();
         studioSlider();
         goToSlide();
-        youtubePlaylists();
         smoothScroll();
         aos();
         emailjs();

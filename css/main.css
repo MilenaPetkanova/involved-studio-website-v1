@@ -122,7 +122,13 @@ a:hover {
  * ## slick-slider
  * ------------------------------------------------------------------- */
 
- .slick-slider .slick-arrow {
+ .slick-slider {
+  display: flex!important;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+.slick-slider .slick-arrow {
   font-size: 2rem;
   cursor: pointer;
   display: flex;
@@ -143,7 +149,29 @@ a:hover {
 .slick-slider .fas.fa-angle-left {
   padding-right: 20px;
 }
-
+.slick-slider .slick-dots {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 2rem 0;
+  list-style-type: none;
+}
+.slick-slider .slick-dots li {
+  margin: 0 0.25rem;
+}
+.slick-slider button {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-indent: -9999px;
+}
+.slick-slider li.slick-active button {
+  background-color: #fff;
+}
 
 /* ===================================================================
  * # typography & general theme styles
@@ -1913,13 +1941,6 @@ html.no-csstransitions .home-scroll {
 *
 * ------------------------------------------------------------------- */
 
-.slick-slider {
-  display: flex!important;
-  justify-content: center;
-  width: 100%;
-  padding: 0;
-}
-
 .studio__slider .slick-slide {
   transform: scale(0.7, 0.7);
   transition: transform 0.3s;
@@ -2098,6 +2119,10 @@ html.no-csstransitions .home-scroll {
   transition: all 0.6s ease-in-out;
 }
 
+.showcase .slick-slider {
+  display: block !important;
+  top: 42px;
+}
 
 /* ------------------------------------------------------------------- 
  * responsive:
