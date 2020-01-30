@@ -2172,7 +2172,11 @@ section .row.crew {
 
 .crew__member .avatar {
   background-size: cover;
-  background-position: center;
+  background-position: top;
+}
+
+.crew__member .avatar.cutom-position {
+  background-position: 42%;
 }
 
 .crew__member .avatar-small {
@@ -2204,8 +2208,8 @@ section .row.crew {
 .crew__member#alek .avatar {
   background-image: url('../images/avatars/alek.jpg');
 }
-.crew__member#lorem .avatar {
-  background-image: url('../images/avatars/lorem.jpg');
+.crew__member#hristo .avatar {
+  background-image: url('../images/avatars/hristo.jpg');
 }
 
 .crew__member .layer {
