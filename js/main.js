@@ -208,8 +208,8 @@
             adaptiveHeight: true,
 			infinite: true,
 			speed: 1000,
-			nextArrow: '<span class="nextArrow"><i class="fas fa-angle-right"></i></span>',
-  		    prevArrow: '<span class="prevArrow"><i class="fas fa-angle-left"></i></span>',
+			nextArrow: '<span class="nextArrow"><i class="fas fa-chevron-right"></i></span>',
+  		    prevArrow: '<span class="prevArrow"><i class="fas fa-chevron-left"></i></span>',
             slidesToShow: 3,
             slidesToScroll: 1,
             pauseOnFocus: false,
@@ -385,7 +385,7 @@
         $('.s-services .wrapper-left').on({
             click: function() {
                 $('.s-services .dropdown-left').toggleClass('opened');
-                $('.s-services .wrapper-left .fa-angle-down').toggleClass('opened');
+                $('.s-services .wrapper-left .fa-chevron-down').toggleClass('opened');
             },
         });
 
@@ -393,7 +393,7 @@
         $('.s-services .wrapper-right').on({
             click: function() {
                 $('.s-services .dropdown-right').toggleClass('opened');
-                $('.s-services .wrapper-right .fa-angle-down').toggleClass('opened');
+                $('.s-services .wrapper-right .fa-chevron-down').toggleClass('opened');
             },
         });
 
@@ -424,7 +424,7 @@
         aos();
         emailjs();
         switchHeaders();
-        appendSmallAvatar();
+        // appendSmallAvatar();
         openServicesDropdowns();
         detectMobileDevice();
 
