@@ -9,18 +9,11 @@ $(window).on('load', function(){
   });
 
   $("#playlist-record-mix-master").youtube_video({
-    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
-    // playlist: 'PLnzwYtYvxGGX8W5QNxlDEkX9fPl4ksUuv',
+    playlist: 'PLnzwYtYvxGGX8W5QNxlDEkX9fPl4ksUuv',
   });
 
   $("#playlist-film-theatre").youtube_video({
-    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
-    // playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
-  });
-
-  $("#playlist-advertisement").youtube_video({
-    playlist: 'PLnzwYtYvxGGWOtfqzkWgu9BssuLXmSI6p',
-    // playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
+    playlist: 'PLnzwYtYvxGGV2SuUtQWceXaDYN50NoOcy',
   });
 
 });
