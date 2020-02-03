@@ -2260,7 +2260,7 @@
     show_controls_on_pause: true,
     show_controls_on_play: false,
     related: false,
-    require_cookie_accept: true, // NEW IN 1.10
+    require_cookie_accept: false, // NEW IN 1.10
     require_cookie_accept_message:
       'Click here to accept youtube cookies to play this video. By accepting you will be accessing a service provided by a third party external to this website.', // NEW IN 1.10
     player_vars: {},

@@ -89,11 +89,15 @@ pre {
 a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
+    -webkit-tap-highlight-color: transparent;
 }
 
+a:hover,
 a:active,
-a:hover {
-    outline-width: 0;
+a:focus {
+  outline: 0 !important;
+  outline-width: 0;
+  -moz-outline-style: none;
 }
 
 abbr[title] {
