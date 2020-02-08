@@ -326,7 +326,7 @@
             var formData = new FormData(this);
             formData.append('service_id', 'gmail');
             formData.append('template_id', 'template_EIxy7YQS');
-            formData.append('user_id', emailJsUserId);
+            formData.append('user_id', apiKeys.emailJsUserId);
 
             $.ajax(apiKeys.emailjsApi, {
                 type: 'POST',
